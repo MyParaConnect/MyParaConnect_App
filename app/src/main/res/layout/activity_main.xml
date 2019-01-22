@@ -5,6 +5,7 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#1437B7"
     tools:context=".MainActivity">
 
 
@@ -29,6 +30,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
+        android:backgroundTint="#001F93"
         app:menu="@menu/navigation" />
 
     <FrameLayout
@@ -37,18 +39,27 @@
         android:layout_height="624dp"
         tools:layout_editor_absoluteX="8dp"
         tools:layout_editor_absoluteY="43dp"
-        android:visibility="invisible"
+        android:visibility="visible"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         >
 
-        <Button
+        <ImageView
             android:id="@+id/ButOn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#1C32DD"
-            android:text="On"
-            android:layout_gravity="center"/>
+            android:layout_gravity="center"
+            android:layout_marginLeft="-80dp"
+            app:srcCompat="@drawable/ButOn" />
+
+        <ImageView
+            android:id="@+id/ButOff"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="80dp"
+            app:srcCompat="@drawable/ButOff" />
+
     </FrameLayout>
 
     <FrameLayout
@@ -63,12 +74,50 @@
         >
 
         <Button
-            android:id="@+id/ButPara"
+            android:id="@+id/ButGPS"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#1C32DD"
-            android:text="GPS"
+            android:background="#284BCC"
+            android:text="Envoyer les coordonnées GPS"
             android:layout_gravity="center"/>
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/Ombre"
+        android:layout_width="395dp"
+        android:layout_height="624dp"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="43dp"
+        android:visibility="invisible"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+
+        <Button
+            android:id="@+id/ButOmbre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#284BCC"
+            android:text="envoyer les mesures"
+            android:layout_gravity="center"/>
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/Infos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/TextInfos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="#284BCC"
+            android:text="blablabla" />
+
     </FrameLayout>
 
 </android.support.constraint.ConstraintLayout>

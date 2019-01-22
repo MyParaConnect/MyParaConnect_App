@@ -14,6 +14,8 @@ public class MainActivity extends AppCompatActivity {
 
     private FrameLayout OnOff;
     private FrameLayout Parasol;
+    private FrameLayout Ombre;
+    private FrameLayout Infos;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -22,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             OnOff.setVisibility(FrameLayout.INVISIBLE);
             Parasol.setVisibility(FrameLayout.INVISIBLE);
+            Ombre.setVisibility(FrameLayout.INVISIBLE);
+            Infos.setVisibility(FrameLayout.INVISIBLE);
 
             switch (item.getItemId()) {
                 case R.id.navigation_home:
@@ -34,6 +38,11 @@ public class MainActivity extends AppCompatActivity {
                     return true;
                 case R.id.navigation_notifications:
                     mTextMessage.setText(R.string.title_notifications);
+                    Ombre.setVisibility(FrameLayout.VISIBLE);
+                    return true;
+                case R.id.navigation_other:
+                    mTextMessage.setText("other");
+                    Infos.setVisibility(FrameLayout.VISIBLE);
                     return true;
             }
             return false;
@@ -47,6 +56,8 @@ public class MainActivity extends AppCompatActivity {
 
         OnOff = findViewById(R.id.OnOff);
         Parasol = findViewById(R.id.Parasol);
+        Ombre = findViewById(R.id.Ombre);
+        Infos = findViewById(R.id.Infos);
         OnOff.setVisibility(FrameLayout.VISIBLE);
 
         mTextMessage = (TextView) findViewById(R.id.message);
