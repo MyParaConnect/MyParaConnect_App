@@ -50,7 +50,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginLeft="-80dp"
-            app:srcCompat="@drawable/ButOn" />
+            app:srcCompat="@drawable/buton" />
 
         <ImageView
             android:id="@+id/ButOff"
@@ -58,7 +58,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginLeft="80dp"
-            app:srcCompat="@drawable/ButOff" />
+            app:srcCompat="@drawable/butoff" />
 
     </FrameLayout>
 
