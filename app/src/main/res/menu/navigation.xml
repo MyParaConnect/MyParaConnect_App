@@ -2,23 +2,23 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/navigation_home"
-        android:icon="@drawable/ic_home_black_24dp"
-        android:title="@string/title_home" />
+        android:id="@+id/power_home"
+        android:icon="@drawable/ic_power_settings_new_black_24dp"
+        android:title="On/Off" />
 
     <item
-        android:id="@+id/navigation_dashboard"
-        android:icon="@drawable/ic_dashboard_black_24dp"
-        android:title="@string/title_dashboard" />
+        android:id="@+id/parasol_home"
+        android:icon="@drawable/ic_beach_access_black_24dp"
+        android:title="Parasol" />
 
     <item
-        android:id="@+id/navigation_notifications"
-        android:icon="@drawable/ic_notifications_black_24dp"
-        android:title="@string/title_notifications" />
+        android:id="@+id/ombre_home"
+        android:icon="@drawable/ic_wb_sunny_black_24dp"
+        android:title="Ombre" />
 
     <item
-        android:id="@+id/navigation_other"
-        android:icon="@drawable/ic_home_black_24dp"
-        android:title="other" />
+        android:id="@+id/infos_home"
+        android:icon="@drawable/ic_help_black_24dp"
+        android:title="Infos" />
 
 </menu>
