@@ -5,7 +5,7 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#1437B7"
+    android:background="#C8632C"
     tools:context=".MainActivity">
 
 
@@ -17,6 +17,7 @@
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
         android:layout_marginTop="@dimen/activity_vertical_margin"
         android:text="@string/title_home"
+        android:visibility="invisible"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -30,7 +31,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:backgroundTint="#001F93"
+        android:backgroundTint="#C94700"
         app:menu="@menu/navigation" />
 
     <FrameLayout
@@ -39,7 +40,7 @@
         android:layout_height="624dp"
         tools:layout_editor_absoluteX="8dp"
         tools:layout_editor_absoluteY="43dp"
-        android:visibility="visible"
+        android:visibility="invisible"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         >
@@ -78,7 +79,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="#284BCC"
+            android:layout_marginBottom="100dp"
             android:text="Envoyer les coordonnées GPS"
+            android:layout_gravity="center"/>
+
+        <Button
+            android:id="@+id/ButPosPara"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#284BCC"
+            android:layout_marginTop="100dp"
+            android:text="Envoyer la position du parasol"
             android:layout_gravity="center"/>
     </FrameLayout>
 
@@ -100,6 +111,7 @@
             android:background="#284BCC"
             android:text="envoyer les mesures"
             android:layout_gravity="center"/>
+
     </FrameLayout>
 
     <FrameLayout
@@ -110,13 +122,136 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/TextInfos"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:background="#284BCC"
-            android:text="blablabla" />
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:text="Les prérequis"
+                    android:textAppearance="@style/TextAppearance.AppCompat"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="15dp"
+                    android:text="Avant toute chose, il est nécessaire de réaliser quelques étapes indispensable.\nTout d'abord, assurez vous d'avoir jumeler par bluetooth votre appareil au parasol. Pour cela, allez dans les paramètres de votre appareil, sélectionner bluetooth puis associer un appareil. Le parasol apparaîtra alors sous le nom de HC-05.\nUne fois cette opération réalisé, vous pouvez initialiser ou simplement faire fonctionner votre parasol."
+                    android:textAppearance="@style/TextAppearance.AppCompat"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:text="Les boutons On et Off"
+                    android:textAppearance="@style/TextAppearance.AppCompat"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="15dp"
+                    android:text="Ces boutons se trouvent sur la page d'accueil ou menu On/Off (premier onglet).\nLe bouton On permet de mettre en route votre parasol, le parasol va ainsi se déployer et automatiquement se mettre à couvrir la zone d'ombre que vous avez préalablement définie.\nLe bouton Off quant à lui permet de ranger le parasol qui va se déplier et ne couvrira plus votre zone d'ombre."
+                    android:textAppearance="@style/TextAppearance.AppCompat"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:text="Le bouton des coordonnées GPS"
+                    android:textAppearance="@style/TextAppearance.AppCompat"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="15dp"
+                    android:text="Ce bouton permet à votre appareil de communiquer au parasol les informations concernant votre position sur la Terre. Ces données permettent de calculer la position du soleil suivant votre position sur Terre.\nPour communiquer ces informations, une fois sur le menu parasol (deuxième onglet), il vous suffit simplement de cliquer sur le bouton 'envoyer les coordonnées GPS'."
+                    android:textAppearance="@style/TextAppearance.AppCompat"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:text="Le bouton envoyer la position du parasol"
+                    android:textAppearance="@style/TextAppearance.AppCompat"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="15dp"
+                    android:text="Ce bouton permet de communiquer à votre parasol sa sa position sur Terre. Pour cela, une fois sur le menu parasol (deuxième onglet), il vous suffit de placer le curseur présent sur la carte à la position exacte où vous souhaitez placer votre parasol et appuiyer sur le bouton 'envoyer la position du parasol'."
+                    android:textAppearance="@style/TextAppearance.AppCompat"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:text="Le bouton envoyer la position de l'ombre"
+                    android:textAppearance="@style/TextAppearance.AppCompat"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="15dp"
+                    android:text="Ce bouton permet de communiquer à votre parasol les informations nécessaires sur l'ombre. Il permettra notamment de connaître la position de l'ombre par rapport à celle de votre parasol.\nPour cela, une fois sur le menu ombre (deuxième onglet), placer le curseur où vous souhaitez avoir de l'ombre sur la carte.\nPuis appuyer sur le bouton 'envoyer la position de l'ombre'."
+                    android:textAppearance="@style/TextAppearance.AppCompat"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:text="A propos de l'équipe de création"
+                    android:textAppearance="@style/TextAppearance.AppCompat"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="15dp"
+                    android:text="Créateurs du projet : - Mathias Baynaud\n                                      - Yann DesFarges\n                                      - Naïm El Belazi\n                                      - Corentin Hervaud\nDesigner de l'pplication : Corentin Hervaud\nProfesseurs encadrants : - Bertrand Beyney\n                                            - Bertrand Royy"
+                    android:textAppearance="@style/TextAppearance.AppCompat"
+                    android:textSize="18sp" />
+
+                <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:text="Lycée Gustave Eiffel, classe de 1°SSIC\nAnnée 2018-2019"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    app:srcCompat="@drawable/eiffel"/>
+
+
+            </LinearLayout>
+        </ScrollView>
 
     </FrameLayout>
 

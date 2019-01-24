@@ -66,6 +66,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ButOnclick.setOnClickListener(this);
         ImageView ButOffclick = (ImageView) findViewById(R.id.ButOff);
         ButOffclick.setOnClickListener(this);
+        Button ButGPSClick = (Button) findViewById(R.id.ButGPS);
+        ButGPSClick.setOnClickListener(this);
+        Button ButPosParaClick = (Button) findViewById(R.id.ButPosPara);
+        ButPosParaClick.setOnClickListener(this);
+        Button ButOmbreClick = (Button) findViewById(R.id.ButOmbre);
+        ButOmbreClick.setOnClickListener(this);
 
         mTextMessage = (TextView) findViewById(R.id.message);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
@@ -84,7 +90,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 mTextMessage.setText("click Off");
                 break;
             }
-            //.... etc
+            case  R.id.ButGPS: {
+                mTextMessage.setText("click GPS");
+                break;
+            }
+            case  R.id.ButPosPara: {
+                mTextMessage.setText("click Position Parasol");
+                break;
+            }
+            case  R.id.ButOmbre: {
+                mTextMessage.setText("click Mesures Ombres");
+                break;
+            }
         }
     }
 }
